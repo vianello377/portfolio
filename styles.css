@@ -1,127 +1,96 @@
-body {
-    background-color: black;
-    color: white;
+:root {
+    --size: 200px;
+    --th: 1px;
   }
-  .bodyindex {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/cd/Monaco_streetzer_view.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  
+  html {
+    background: black;
   }
-  a:focus {
-    outline: 2px solid #0300b1; 
+  
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
   }
-  .headeracceuil {
-    background-color: rgba(0, 0, 0, 0.2);
-    color: #ffffff;
+  
+  body {
     display: flex;
     justify-content: center;
-    padding: 20px 0;
-  }
-  header {
-    background-color: rgb(71, 71, 71);
-    display: flex;
-    justify-content: center;
-  }
-  a {
-    color: #ffff;
-    text-decoration: none;
-  }
-  a:hover {
-    color: #0004ff;
-  }
-  nav {
-    display: flex;
-    margin: 50px;
     align-items: center;
-    gap: 100%;
-    justify-content: center;
-    color: white;
   }
   
-  .imageacceuil {
-    width: 280px;
-  }
-  
-  .mainacceuil {
+  #container {
+    position: absolute; /* Permet de positionner le conteneur en arrière-plan */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
-    margin: 20%;
-    gap: 100px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.2) ;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
-  .headertitre {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 20px 0;
+  
+  .square {
+    border: solid white var(--th);
+    width: var(--size);
+    height: var(--size);
+    position: absolute;
+    box-shadow: rgba(255, 255, 255, 0.5) 0 0 calc(var(--size) / 10) inset,
+      rgba(255, 255, 255, 0.5) 0 0 calc(var(--size) / 20);
+    animation: bounce 1.5s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite alternate;
+    transform: rotate(45deg)
+      translate(calc(-1 * var(--size) / 5), calc(-1 * var(--size) / 5));
+  }
+  
+  .square:nth-of-type(2) {
+    animation-delay: 200ms;
+  }
+  
+  .square:nth-of-type(3) {
+    animation-delay: 400ms;
+  }
+  
+  @keyframes bounce {
+    from {
+      transform: rotate(45deg)
+        translate(calc(-1 * var(--size) / 5), calc(-1 * var(--size) / 5));
+    }
+    to {
+      transform: rotate(45deg)
+        translate(calc(var(--size) / 5), calc(var(--size) / 5));
+    }
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1; /* Place le contenu au-dessus des carrés */
+    color: aliceblue;
     text-align: center;
   }
   
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0;
-  }
-  
-  .portfolio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
-  .portfolio-item {
-    background: #414141;
-    border: 2px solid #0600ac;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-  }
-  
-  .portfolio-item:hover {
-    transform: translateY(-5px);
-  }
-  
-  .portfolio-item img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-  }
-  
-  .portfolio-item .content {
-    padding: 15px;
-  }
-  
-  .portfolio-item h3 {
-    margin: 0 0 10px;
-    font-size: 1.5rem;
-  }
-  
-  .portfolio-item p {
+  h1 {
+    font-size: 3em;
     margin: 0;
-    font-size: 1rem;
-    color: #FFFFFF;
   }
-  .btn-plus {
-    background-color: #1e00ff;
+  /* Style pour le bouton "Commencer" */
+  .start-button {
+    background-color: #ededed36; /* Bleu pour le bouton */
     color: white;
-    padding: 10px 20px;
+    font-size: 1.2em;
+    padding: 15px 30px;
     border: none;
-    border-radius: 5px;
-    font-size: 1rem;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    align-self: flex-start;
-    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 200%; /* Espace entre le titre et le bouton */
   }
-  #background-video {
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    z-index: -1; 
+  
+  .start-button:hover {
+    background-color: #434649; /* Couleur plus foncée lors du survol */
+    transform: scale(1.05); /* Agrandir légèrement le bouton */
   }
   

@@ -1,0 +1,191 @@
+nav {
+    background-color:black;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    justify-content:center;
+    display: flex;
+    margin-bottom:8%;
+    gap:50%;
+  }
+  
+  .div_a_propos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .div_a_prpos_titre {
+    color: white;
+  }
+  
+  .div_a_prpos_titre h1 {
+    font-size: 2em;
+    margin-top: 10%;
+    color: white;
+    text-align: center;
+  }
+  
+  .div_a_propos_éléments {
+    display: flex;
+    gap: 20%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  
+  .div_a_prpos_texte {
+    font-size: 1.2em;
+    text-align: center;
+    margin-top:5%;
+    color: white;
+    padding-left: 10%;
+  }
+  
+  .div_acceuil_img {
+    text-align: center;
+  }
+  
+  .imageacceuil {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  @property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  body {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    width: 100%;
+  }
+  
+  .card {
+    background: black;
+    width: 70%;
+    height: 30%;
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 0, 8em;
+    font color: white;
+    cursor: pointer;
+    }
+  
+  .card::before {
+    color: white;
+    content: "";
+    width: 102%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate),
+      #ffffff,
+      #081d5a 43%,
+      #000000
+    );
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -1%;
+    
+    animation: spin 10s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 2rem;
+  }
+  
+  .compétence{
+      display: flex;
+      flex-direction:column;
+      background-color: black;
+      margin-top: 50%;
+      width: 100%;
+      flex-grow: 1;
+      align-self: stretch;
+      
+  }
+  .compétences_titre{
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10%;
+  }
+  .compétences_progress-bar{
+    weight: 100%
+    
+  }
+  
+  
+  .progress-bar {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  
+  .group-progress-bar {
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .progress-logo img {
+    height: 100%;
+    gap: 20px;
+  }
+  
+  .progress-bar div {
+    height: 100%;
+    background-color: rgb(61, 99, 182);
+    border-radius: 50px;
+    width: 0%;
+    transition: all 1s ease-in;
+  }
+  
+  .progress-bar:hover .ai {
+    width: 50%;
+  }
+  
+  .progress-bar:hover .ps {
+    width: 75%;
+  }
+  .progress-bar:hover .vs {
+    width: 25%;
+  }
+  .progress-bar:hover .ca {
+    width: 100%;
+  }
+  
